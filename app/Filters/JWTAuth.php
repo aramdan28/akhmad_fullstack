@@ -5,14 +5,11 @@ namespace App\Filters;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
-use \Firebase\JWT\JWT;
-use \Firebase\JWT\Key;
+use Firebase\JWT\JWT;
 use Config\Services;
 
 class JWTAuth implements FilterInterface
 {
-    protected $key = 'DxcYde3MwhOgNEQ132QPdSBLw05LrFjd183';
-
     public function before(RequestInterface $request, $arguments = null)
     {
         $authHeader = $request->getServer('HTTP_AUTHORIZATION');
@@ -29,28 +26,27 @@ class JWTAuth implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something after the controller has executed
+        // Do something here
     }
 
-    protected function getJWTFromRequest($authHeader)
+    private function getJWTFromRequest($authHeader)
     {
-        if (empty($authHeader)) {
+        if (!$authHeader) {
             throw new \Exception('Authorization header is missing');
         }
 
-        if (!preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
-            throw new \Exception('Invalid authorization header format');
-        }
-
-        return $matches[1];
+        $token = explode(' ', $authHeader)[1];
+        return $token;
     }
 
-    protected function validateJWTFromRequest($encodedToken)
+    private function validateJWTFromRequest($encodedToken)
     {
-        try {
-            JWT::decode($encodedToken, new Key($this->key, 'HS256'));
-        } catch (\Exception $e) {
-            throw new \Exception('Invalid token: ' . $e->getMessage());
+        $key = getenv('JWT_SECRET');
+        $decodedToken = JWT::decode($encodedToken, new \Firebase\JWT\Key($key, 'HS256'));
+
+        // Optional: Validate token claims, such as issuer and audience
+        if ($decodedToken->iss !== 'localhost' || $decodedToken->aud !== 'localhost') {
+            throw new \Exception('Invalid token claims');
         }
     }
 }

@@ -105,8 +105,8 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-        'jwt' => [
-            'before' => ['api/*'],  // Apply JWTAuth filter to all routes under 'api' group
-        ],
+        // 'jwt' => [
+        //     'before' => ['api/*'],  // Apply JWTAuth filter to all routes under 'api' group
+        // ],
     ];
 }

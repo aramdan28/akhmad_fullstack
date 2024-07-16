@@ -23,12 +23,6 @@
     <!-- loader-->
     <link href="<?= base_url() ?>assets_admin/css/pace.min.css" rel="stylesheet" />
 
-    <!--Theme Styles-->
-    <link href="<?= base_url() ?>assets_admin/css/dark-theme.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>assets_admin/css/light-theme.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>assets_admin/css/semi-dark.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>assets_admin/css/header-colors.css" rel="stylesheet" />
-
     <title>RSUD Subang - <?= $title ?></title>
 
 
@@ -40,7 +34,7 @@
         var id_role = localStorage.id_role;
 
         if (id_user == undefined || id_role == '3') {
-            location.href = "./";
+            location.href = url_host;
         }
     </script>
 </head>
@@ -81,19 +75,12 @@
     <script src="<?= base_url() ?>assets_admin/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets_admin/plugins/simplebar/js/simplebar.min.js"></script>
     <script src="<?= base_url() ?>assets_admin/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="<?= base_url() ?>assets_admin/js/pace.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/chartjs/js/Chart.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/chartjs/js/Chart.extension.js"></script>
-    <script src="<?= base_url() ?>assets_admin/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+
     <!--app-->
     <script src="<?= base_url() ?>assets_admin/js/app.js"></script>
-    <script src="<?= base_url() ?>assets_admin/js/index2.js"></script>
-    <script>
+    <!-- <script>
         new PerfectScrollbar(".best-product")
-    </script>
+    </script> -->
 
 
 

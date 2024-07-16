@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PatientModel;
+use App\Models\UserModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class Patients extends ResourceController
@@ -71,7 +72,6 @@ class Patients extends ResourceController
 
     public function update($id = null)
     {
-        // $data = $this->request->getRawInput();
         $data = $this->request->getJSON(true);
 
         $this->model->update($id, $data);
@@ -80,7 +80,14 @@ class Patients extends ResourceController
 
     public function delete($id = null)
     {
+        $userModel = new UserModel();
+
+        $patient =  $this->model->find($id);
+        $iduser =  $patient['id_user'];
+
         $this->model->delete($id);
+        $userModel->where('id', $iduser)->delete();
+
         return $this->respondDeleted(['id' => $id]);
     }
 }

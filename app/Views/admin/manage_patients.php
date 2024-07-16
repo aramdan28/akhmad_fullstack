@@ -16,7 +16,6 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Phone</th>
                 <th>Age</th>
                 <th>Address</th>
                 <th>Medical Record</th>
@@ -41,10 +40,6 @@
                     <div class="mb-3">
                         <label for="addName" class="form-label">Name</label>
                         <input type="text" class="form-control" id="addName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="addPhone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="addPhone" required>
                     </div>
                     <div class="mb-3">
                         <label for="addAge" class="form-label">Age</label>
@@ -75,7 +70,6 @@
             </div>
             <div class="modal-body">
                 <p><strong>Name:</strong> <span id="viewName"></span></p>
-                <p><strong>Phone:</strong> <span id="viewPhone"></span></p>
                 <p><strong>Age:</strong> <span id="viewAge"></span></p>
                 <p><strong>Address:</strong> <span id="viewAddress"></span></p>
                 <p><strong>Medical Record:</strong> <span id="viewMedicalRecord"></span></p>
@@ -98,10 +92,6 @@
                     <div class="mb-3">
                         <label for="editName" class="form-label">Name</label>
                         <input type="text" class="form-control" id="editName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editPhone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="editPhone" required>
                     </div>
                     <div class="mb-3">
                         <label for="editAge" class="form-label">Age</label>
@@ -177,9 +167,6 @@
                     "data": "name"
                 },
                 {
-                    "data": "phone"
-                },
-                {
                     "data": "age"
                 },
                 {
@@ -232,7 +219,6 @@
                 },
                 success: function(response) {
                     $('#viewName').text(response.name);
-                    $('#viewPhone').text(response.phone);
                     $('#viewAge').text(response.age);
                     $('#viewAddress').text(response.address);
                     $('#viewMedicalRecord').text(response.medical_record);
@@ -257,7 +243,6 @@
                 success: function(response) {
                     $('#editId').val(response.id);
                     $('#editName').val(response.name);
-                    $('#editPhone').val(response.phone);
                     $('#editAge').val(response.age);
                     $('#editAddress').val(response.address);
                     $('#editMedicalRecord').val(response.medical_record);
@@ -276,14 +261,12 @@
             var id = $('#editId').val();
 
             var name = document.getElementById('editName').value;
-            var phone = document.getElementById('editPhone').value;
             var age = document.getElementById('editAge').value;
             var address = document.getElementById('editAddress').value;
             var medical_record = document.getElementById('editMedicalRecord').value;
 
             let data = {
                 'name': name,
-                'phone': phone,
                 'age': age,
                 'address': address,
                 'medical_record': medical_record

@@ -1220,3 +1220,14 @@ in APPPATH/Controllers/Patients.php on line 75.
  6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 16:52:45 --> ErrorException: Attempt to read property "id_user" on array
+[Method: DELETE, Route: api/patients/2]
+in APPPATH/Controllers/Patients.php on line 86.
+ 1 APPPATH/Controllers/Patients.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_user" on array', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Patients.php', 86)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Patients->delete('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Patients))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')

@@ -75,6 +75,10 @@
             localStorage.setItem('id_role', data.id_role);
             toastr.success('Berhasil masuk');
 
+            setTimeout(function() {
+                location.href = "./"
+            }, 3000);
+
         } else {
             toastr.error(data.messages.error);
         }

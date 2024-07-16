@@ -17,14 +17,14 @@
                     </li>
                     <li class="nav-item dropdown"><a class="nav-link" href="<?= base_url() ?>#schedule">Jadwal Dokter</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= base_url() ?>#about">Tentang Kami</a>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url() ?>sign-in">Masuk</a>
+                    <li id="nav-logout" class="nav-item"><a class="nav-link" href="<?= base_url() ?>sign-in">Masuk</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url() ?>sign-up">Daftar</a>
+                    <li id="nav-logout" class="nav-item"><a class="nav-link" href="<?= base_url() ?>sign-up">Daftar</a>
                     </li>
 
-                    <li class="nav-item d-block d-lg-none "><a class="nav-link" href="<?= base_url() ?>sign-up">Profile</a>
+                    <li id="nav-login" class="nav-item d-block d-lg-none "><a class="nav-link" href="<?= base_url() ?>sign-up">Profile</a>
                     </li>
-                    <li class="nav-item d-block d-lg-none "><a class="nav-link" href="<?= base_url() ?>sign-up">Keluar</a>
+                    <li id="nav-login" class="nav-item d-block d-lg-none " onclick="logout()"><a class="nav-link" href="#">Keluar</a>
                     </li>
 
                 </ul>
@@ -33,11 +33,11 @@
             <!-- /.navbar-collapse -->
             <div class="navbar-other w-100 d-flex ms-auto">
                 <ul class="navbar-nav flex-row align-items-center ms-auto" data-sm-skip="true">
-                    <li class="nav-item dropdown language-select d-none d-lg-block ">
+                    <li id="nav-profile" class="nav-item dropdown language-select d-none d-lg-block ">
                         <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user"></i></a>
                         <ul class="dropdown-menu">
                             <li class="nav-item"><a class="dropdown-item" href="#">Profile</a></li>
-                            <li class="nav-item"><a class="dropdown-item" href="#">Keluar</a></li>
+                            <li class="nav-item" onclick="logout()"><a class="dropdown-item" href="#">Keluar</a></li>
 
                         </ul>
                     </li>

@@ -47,7 +47,64 @@
 </body>
 
 <script>
-    console.log(localStorage);
+    var id_user = localStorage.id_user;
+    var id_role = localStorage.id_role;
+
+    if (id_user != undefined) {
+
+        var elems1 = document.querySelectorAll("#nav-profile");
+
+        for (let index = 0; index < elems1.length; index++) {
+            elems1[index].classList.add('d-lg-block');
+        }
+        var elems = document.querySelectorAll("#nav-login");
+
+        for (let index = 0; index < elems.length; index++) {
+            elems[index].style.display = "block !important";
+            elems[index].classList.add('d-block');
+            elems[index].classList.remove('d-none');
+
+
+        }
+        var elems2 = document.querySelectorAll("#nav-logout");
+        for (let index2 = 0; index2 < elems2.length; index2++) {
+            elems2[index2].style.display = "none !important";
+            elems2[index2].classList.add('d-none');
+
+        }
+    } else {
+
+        var elems1 = document.querySelectorAll("#nav-profile");
+
+        for (let index = 0; index < elems1.length; index++) {
+            elems1[index].classList.remove('d-lg-block');
+        }
+
+        var elems = document.querySelectorAll("#nav-login");
+
+        for (let index = 0; index < elems.length; index++) {
+            elems[index].style.display = "none !important";
+            elems[index].classList.remove('d-block');
+            elems[index].classList.add('d-none');
+        }
+        var elems2 = document.querySelectorAll("#nav-logout");
+        for (let index2 = 0; index2 < elems2.length; index2++) {
+            elems2[index2].style.display = "block !important";
+            elems2[index2].classList.remove('d-none');
+
+        }
+    }
+
+    function logout() {
+
+        localStorage.removeItem("token");
+        localStorage.removeItem("id_user");
+        localStorage.removeItem("id_role");
+        setTimeout(function() {
+            location.href = "./"
+        }, 3000);
+
+    }
 </script>
 
 </html>

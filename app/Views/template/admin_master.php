@@ -31,6 +31,7 @@
 
     <title>RSUD Subang - <?= $title ?></title>
 
+
     <?= $this->renderSection('styles') ?>
 
     <script>
@@ -41,19 +42,6 @@
         if (id_user == undefined || id_role == '3') {
             location.href = "./";
         }
-
-        const token = localStorage.id_role; // Assuming you have stored the token in localStorage
-
-        fetch('http://localhost:8080/', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
     </script>
 </head>
 
@@ -109,8 +97,20 @@
 
 
 
+
     <?= $this->renderSection('script') ?>
 
+    <script>
+        function logout() {
+
+            localStorage.removeItem("token");
+            localStorage.removeItem("id_user");
+            localStorage.removeItem("id_role");
+            setTimeout(function() {
+                location.href = "./"
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DoctorShecduleModel extends Model
+class DoctorScheduleModel extends Model
 {
-    protected $table            = 'doctorshecdules';
+    protected $table            = 'doctorschedules';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

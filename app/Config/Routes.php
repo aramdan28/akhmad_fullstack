@@ -12,7 +12,17 @@ $routes->get('sign-up', 'Home::sign_up');
 $routes->post('register', 'AuthController::register');
 $routes->post('login', 'AuthController::login');
 
-$routes->group('api', ['filter' => 'jwtauth'], function ($routes) {
+
+$routes->group('administrator',   function ($routes) {
+    $routes->get('', 'AdminController::index');
+    $routes->get('dashboard', 'AdminController::index');
+    $routes->get('patients', 'AdminController::managePatients');
+    $routes->get('doctors', 'AdminController::manageDoctors');
+    $routes->get('doctor-schedule', 'AdminController::manageDoctorSchedules');
+    $routes->get('inspection-schedule', 'AdminController::manageInspectionSchedules');
+});
+
+$routes->group('api', ['filter' => 'jwt'], function ($routes) {
     $routes->resource('patients');
     $routes->resource('doctors');
     $routes->resource('doctor_schedule');

@@ -17,6 +17,12 @@
 
     <?= $this->renderSection('styles') ?>
 
+    <script>
+        var url_host = 'http://localhost:8080/';
+        var id_user = localStorage.id_user;
+        var id_role = localStorage.id_role;
+    </script>
+
 </head>
 
 <body>
@@ -47,9 +53,6 @@
 </body>
 
 <script>
-    var id_user = localStorage.id_user;
-    var id_role = localStorage.id_role;
-
     if (id_user != undefined) {
 
         var elems1 = document.querySelectorAll("#nav-profile");
@@ -102,7 +105,7 @@
         localStorage.removeItem("id_role");
         setTimeout(function() {
             location.href = "./"
-        }, 3000);
+        }, 1000);
 
     }
 </script>

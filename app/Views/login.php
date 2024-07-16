@@ -7,6 +7,12 @@
 
 <?= $this->section('content'); ?>
 
+<script>
+    if (id_user != undefined) {
+        location.href = "./";
+    }
+</script>
+
 <div class="hero-slider-wrapper bg-dark py-16">
     <section class="wrapper bg-dark angled lower-start">
         <div class="container pt-7 pt-md-11 pb-8">
@@ -23,15 +29,19 @@
                 <div class="col-lg-5 offset-lg-1 mb-n18" data-cues="slideInDown">
                     <div class="position-relative">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-header pb-1">
+                                <h5 class="text-dark">Masuk Sebagai Pasien</h5>
+                                <small class="text-danger">* Kolom harus diisi</small>
+                            </div>
+                            <div class="card-body pt-3">
                                 <form id="loginForm">
                                     <div class="form-floating mb-4">
                                         <input id="loginEmail" type="email" class="form-control" placeholder="Masukan Email">
-                                        <label for="loginEmail">Email</label>
+                                        <label for="loginEmail">Email<label class="text-danger">*</label></label>
                                     </div>
                                     <div class="form-floating mb-4">
                                         <input id="loginPassword" type="password" class="form-control" placeholder="Masukan password">
-                                        <label for="loginPassword">password</label>
+                                        <label for="loginPassword">password<label class="text-danger">*</label></label>
                                     </div>
                                     <button type="submit" class="btn btn-success">Masuk</button>
                                 </form>
@@ -56,7 +66,12 @@
         e.preventDefault();
         const email = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginPassword').value;
-        const response = await fetch('http://localhost:8080/login', {
+
+        if (email == '' || password == '') {
+            toastr.error('isi semua kolom');
+            return false;
+        }
+        const response = await fetch(url_host + 'login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,10 +91,16 @@
             toastr.success('Berhasil masuk');
 
             setTimeout(function() {
-                location.href = "./"
+                if (localStorage.id_role != '3') {
+                    location.href = "./administrator"
+
+                } else {
+                    location.href = "./"
+                }
             }, 3000);
 
         } else {
+
             toastr.error(data.messages.error);
         }
     });

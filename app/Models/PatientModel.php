@@ -12,7 +12,7 @@ class PatientModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_user', 'phone', 'age', 'address', 'medical_record', 'created_by', 'updated_by'];
+    protected $allowedFields    = ['id_user', 'name', 'phone', 'age', 'address', 'medical_record', 'created_by', 'updated_by'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -1,0 +1,213 @@
+CRITICAL - 2024-07-16 08:32:50 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:33:13 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:33:33 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:33:34 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:33:35 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:34:28 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:34:30 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:34:30 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 08:34:31 --> RuntimeException: View themes, no current section.
+[Method: GET, Route: /]
+in SYSTEMPATH/View/View.php on line 442.
+ 1 APPPATH/Views/home.php(514): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/fullstack/app/Views/home.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('home', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:21:11 --> ErrorException: Undefined array key "email"
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 31.
+ 1 APPPATH/Controllers/AuthController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/AuthController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:25:25 --> ErrorException: Undefined array key "email"
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 30.
+ 1 APPPATH/Controllers/AuthController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/AuthController.php', 30)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:25:57 --> Error: Object of class CodeIgniter\HTTP\IncomingRequest could not be converted to string
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:29:51 --> ErrorException: Undefined array key "email"
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 33.
+ 1 APPPATH/Controllers/AuthController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/AuthController.php', 33)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:29:57 --> ErrorException: Undefined array key "email"
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 33.
+ 1 APPPATH/Controllers/AuthController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/AuthController.php', 33)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:35:28 --> InvalidArgumentException: key must be a string when using hmac
+[Method: POST, Route: login]
+in VENDORPATH/firebase/php-jwt/src/JWT.php on line 249.
+ 1 VENDORPATH/firebase/php-jwt/src/JWT.php(219): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjE3MjExMjYxMjgsIm5iZiI6MTcyMTEyNjEyOCwiZXhwIjoxNzIxMTI5NzI4LCJkYXRhIjp7ImlkIjoiMiIsImVtYWlsIjoiZG9jdG9yMUBleGFtcGxlLmNvbSJ9fQ', false, 'HS256')
+ 2 APPPATH/Controllers/AuthController.php(47): Firebase\JWT\JWT::encode([...], false, 'HS256')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 10:36:05 --> InvalidArgumentException: key must be a string when using hmac
+[Method: POST, Route: login]
+in VENDORPATH/firebase/php-jwt/src/JWT.php on line 249.
+ 1 VENDORPATH/firebase/php-jwt/src/JWT.php(219): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjE3MjExMjYxNjUsIm5iZiI6MTcyMTEyNjE2NSwiZXhwIjoxNzIxMTI5NzY1LCJkYXRhIjp7ImlkIjoiMiIsImVtYWlsIjoiZG9jdG9yMUBleGFtcGxlLmNvbSJ9fQ', false, 'HS256')
+ 2 APPPATH/Controllers/AuthController.php(47): Firebase\JWT\JWT::encode([...], false, 'HS256')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')

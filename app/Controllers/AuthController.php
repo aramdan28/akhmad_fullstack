@@ -20,7 +20,6 @@ class AuthController extends ResourceController
         $datau['id_role'] = '3';
         $datau['email'] = $data['email'];
         $datau['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-        $datap['id_user'] = $userModel->getInsertID();
         $datap['name'] = $data['name'];
         $datap['address'] = $data['address'];
         $datap['age'] = $data['age'];
@@ -34,11 +33,13 @@ class AuthController extends ResourceController
 
         $cekemail = $userModel->where('email')->get()->getResultArray();
 
-        if ($cekemail > 0) {
+        if (count($cekemail) > 0) {
             return $this->respondCreated(['status' => '200', 'sts' => 'error', 'messages' => ["error" => 'email sudah terdaftar']]);
         }
 
         if ($userModel->insert($datau)) {
+            $datap['id_user'] = $userModel->getInsertID();
+
             if ($patientModel->insert($datap)) {
                 return $this->respondCreated(['status' => '200', 'sts' => 'ok', 'messages' => ["success" => 'Berhasil mendaftar, silahkan untuk masuk']]);
             } else {

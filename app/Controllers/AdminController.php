@@ -32,14 +32,14 @@ class AdminController extends BaseController
         return view('admin/manage_doctors', $data);
     }
 
-    public function manageDoctorSchedules()
-    {
-        $model = new DoctorScheduleModel();
-        $data['title'] = 'Doctor Schedules';
+    // public function manageDoctorSchedules()
+    // {
+    //     $model = new DoctorScheduleModel();
+    //     $data['title'] = 'Doctor Schedules';
 
-        $data['doctor_schedules'] = $model->findAll();
-        return view('admin/manage_doctor_schedules', $data);
-    }
+    //     $data['doctor_schedules'] = $model->findAll();
+    //     return view('admin/manage_doctor_schedules', $data);
+    // }
 
     public function manageInspectionSchedules()
     {

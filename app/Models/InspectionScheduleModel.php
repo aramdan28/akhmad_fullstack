@@ -12,7 +12,7 @@ class InspectionScheduleModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['date_time', 'id_patient', 'id_doctor', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'];
+    protected $allowedFields    = ['date_time', 'time', 'id_patient', 'id_doctor', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -22,6 +22,8 @@
 
     <!-- loader-->
     <link href="<?= base_url() ?>assets_admin/css/pace.min.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>assets_admin/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets_admin/plugins/toastr/toastr.min.css">
 
     <title>RSUD Subang - <?= $title ?></title>
 
@@ -82,11 +84,13 @@
         new PerfectScrollbar(".best-product")
     </script> -->
 
+    <script src="<?= base_url() ?>assets_admin/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url() ?>assets_admin/plugins/toastr/toastr.min.js"></script>
+
 
 
 
     <?= $this->renderSection('script') ?>
-
     <script>
         function logout() {
 

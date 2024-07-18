@@ -1231,3 +1231,794 @@ in APPPATH/Controllers/Patients.php on line 86.
  6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 16:59:26 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`patients`, CONSTRAINT `patients_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)) in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `pa...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/fullstack/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/fullstack/app/Controllers/AuthController.php(42): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\AuthController->register()
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+CRITICAL - 2024-07-16 16:59:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`patients`, CONSTRAINT `patients_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+[Method: POST, Route: register]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (:id_user:, :name:, :address:, :age:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Controllers/AuthController.php(42): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 16:59:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`patients`, CONSTRAINT `patients_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (0, \'Akhmad Ramdani Isnan Nurrodin\', \'soklat\', \'26\', \'2024-07-16 16:59:26\', \'2024-07-16 16:59:26\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (0, \'Akhmad Ramdani Isnan Nurrodin\', \'soklat\', \'26\', \'2024-07-16 16:59:26\', \'2024-07-16 16:59:26\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (:id_user:, :name:, :address:, :age:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Controllers/AuthController.php(42): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 16:59:26 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`patients`, CONSTRAINT `patients_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (0, \'Akhmad Ramdani Isnan Nurrodin\', \'soklat\', \'26\', \'2024-07-16 16:59:26\', \'2024-07-16 16:59:26\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (0, \'Akhmad Ramdani Isnan Nurrodin\', \'soklat\', \'26\', \'2024-07-16 16:59:26\', \'2024-07-16 16:59:26\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (0, \'Akhmad Ramdani Isnan Nurrodin\', \'soklat\', \'26\', \'2024-07-16 16:59:26\', \'2024-07-16 16:59:26\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `patients` (`id_user`, `name`, `address`, `age`, `created_at`, `updated_at`) VALUES (:id_user:, :name:, :address:, :age:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/AuthController.php(42): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 17:43:11 --> CodeIgniter\Database\Exceptions\DataException: There is no data to insert.
+[Method: POST, Route: api/patients]
+in SYSTEMPATH/BaseModel.php on line 826.
+ 1 SYSTEMPATH/BaseModel.php(826): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([], false)
+ 3 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 4 APPPATH/Controllers/Patients.php(63): CodeIgniter\BaseModel->save([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Patients->create()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Patients))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:10:20 --> ErrorException: Undefined array key "day"
+[Method: GET, Route: api/doctors/1]
+in APPPATH/Controllers/Doctors.php on line 80.
+ 1 APPPATH/Controllers/Doctors.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "day"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 80)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('1')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:10:46 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors/3]
+in APPPATH/Controllers/Doctors.php on line 77.
+ 1 APPPATH/Controllers/Doctors.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 77)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('3')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:12:02 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors/3]
+in APPPATH/Controllers/Doctors.php on line 77.
+ 1 APPPATH/Controllers/Doctors.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 77)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('3')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:18:48 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors/3]
+in APPPATH/Controllers/Doctors.php on line 77.
+ 1 APPPATH/Controllers/Doctors.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 77)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('3')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:20:42 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors/3]
+in APPPATH/Controllers/Doctors.php on line 77.
+ 1 APPPATH/Controllers/Doctors.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 77)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('3')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 18:45:17 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)) in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `do...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `do...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `do...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `do...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/fullstack/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php(70): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\Doctors->create()
+#10 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+#11 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-07-16 18:45:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+[Method: POST, Route: api/doctors]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/Doctors.php(70): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:45:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 18:45:17\', \'2024-07-16 18:45:17\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 18:45:17\', \'2024-07-16 18:45:17\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/Doctors.php(70): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 18:45:17 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 18:45:17\', \'2024-07-16 18:45:17\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 18:45:17\', \'2024-07-16 18:45:17\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 18:45:17\', \'2024-07-16 18:45:17\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/Doctors.php(70): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 19:34:44 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)) in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `do...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `do...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `do...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `do...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/fullstack/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\Doctors->create()
+#10 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+#11 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-07-16 19:34:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+[Method: POST, Route: api/doctors]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:34:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 19:34:44\', \'2024-07-16 19:34:44\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 19:34:44\', \'2024-07-16 19:34:44\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:34:44 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctors`, CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 19:34:44\', \'2024-07-16 19:34:44\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 19:34:44\', \'2024-07-16 19:34:44\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'2024-07-16 19:34:44\', \'2024-07-16 19:34:44\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `created_at`, `updated_at`) VALUES (:name:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:38:36 --> ErrorException: Undefined array key "specialization"
+[Method: POST, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 72.
+ 1 APPPATH/Controllers/Doctors.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "specialization"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 72)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 19:40:51 --> mysqli_sql_exception: Unknown column 'day' in 'field list' in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `do...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `do...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `do...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `do...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/fullstack/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\Doctors->create()
+#10 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+#11 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-07-16 19:40:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'day' in 'field list'
+[Method: POST, Route: api/doctors]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (:name:, :day:, :specialization:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:40:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'day' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'Senin\', \'dalam\', \'2024-07-16 19:40:51\', \'2024-07-16 19:40:51\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'Senin\', \'dalam\', \'2024-07-16 19:40:51\', \'2024-07-16 19:40:51\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (:name:, :day:, :specialization:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:40:51 --> [Caused by] mysqli_sql_exception: Unknown column 'day' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'Senin\', \'dalam\', \'2024-07-16 19:40:51\', \'2024-07-16 19:40:51\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'Senin\', \'dalam\', \'2024-07-16 19:40:51\', \'2024-07-16 19:40:51\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (\'Dr. Rozak\', \'Senin\', \'dalam\', \'2024-07-16 19:40:51\', \'2024-07-16 19:40:51\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `doctors` (`name`, `day`, `specialization`, `created_at`, `updated_at`) VALUES (:name:, :day:, :specialization:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/Doctors.php(74): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 19:44:39 --> ErrorException: Undefined array key "id_doctor"
+[Method: DELETE, Route: api/doctors/5]
+in APPPATH/Controllers/Doctors.php on line 125.
+ 1 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_doctor"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 125)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 20:00:35 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctorschedules`, CONSTRAINT `doctorschedules_ibfk_1` FOREIGN KEY (`id_doctor`) REFERENCES `doctors` (`id`)) in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('UPDATE `doctors...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `doctors...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `doctors...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `doctors...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 /Applications/MAMP/htdocs/fullstack/system/Model.php(865): CodeIgniter\BaseModel->update(Array, Array)
+#7 /Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php(125): CodeIgniter\Model->update('7', Array)
+#8 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+#10 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+CRITICAL - 2024-07-16 20:00:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctorschedules`, CONSTRAINT `doctorschedules_ibfk_1` FOREIGN KEY (`id_doctor`) REFERENCES `doctors` (`id`))
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `doctorschedules` SET `id_doctor` = :id_doctor:, `day` = :day:, `time_start` = :time_start:, `end_time` = :end_time:, `updated_at` = :updated_at:
+WHERE `doctorschedules`.`id` IN :doctorschedules.id:', [...], false)
+ 2 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update('7', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:00:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctorschedules`, CONSTRAINT `doctorschedules_ibfk_1` FOREIGN KEY (`id_doctor`) REFERENCES `doctors` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `doctorschedules` SET `id_doctor` = 0, `day` = \'Senin\', `time_start` = \'\', `end_time` = \'\', `updated_at` = \'2024-07-16 20:00:35\'
+WHERE `doctorschedules`.`id` IN (\'7\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `doctorschedules` SET `id_doctor` = 0, `day` = \'Senin\', `time_start` = \'\', `end_time` = \'\', `updated_at` = \'2024-07-16 20:00:35\'
+WHERE `doctorschedules`.`id` IN (\'7\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `doctorschedules` SET `id_doctor` = :id_doctor:, `day` = :day:, `time_start` = :time_start:, `end_time` = :end_time:, `updated_at` = :updated_at:
+WHERE `doctorschedules`.`id` IN :doctorschedules.id:', [...], false)
+ 4 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update('7', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:00:35 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rs_sederhana`.`doctorschedules`, CONSTRAINT `doctorschedules_ibfk_1` FOREIGN KEY (`id_doctor`) REFERENCES `doctors` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('UPDATE `doctorschedules` SET `id_doctor` = 0, `day` = \'Senin\', `time_start` = \'\', `end_time` = \'\', `updated_at` = \'2024-07-16 20:00:35\'
+WHERE `doctorschedules`.`id` IN (\'7\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `doctorschedules` SET `id_doctor` = 0, `day` = \'Senin\', `time_start` = \'\', `end_time` = \'\', `updated_at` = \'2024-07-16 20:00:35\'
+WHERE `doctorschedules`.`id` IN (\'7\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `doctorschedules` SET `id_doctor` = 0, `day` = \'Senin\', `time_start` = \'\', `end_time` = \'\', `updated_at` = \'2024-07-16 20:00:35\'
+WHERE `doctorschedules`.`id` IN (\'7\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `doctorschedules` SET `id_doctor` = :id_doctor:, `day` = :day:, `time_start` = :time_start:, `end_time` = :end_time:, `updated_at` = :updated_at:
+WHERE `doctorschedules`.`id` IN :doctorschedules.id:', [...], false)
+ 5 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update('7', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:01:35 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/BaseModel.php on line 1833.
+ 1 SYSTEMPATH/BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:02:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/BaseModel.php on line 1833.
+ 1 SYSTEMPATH/BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:05:02 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/BaseModel.php on line 1833.
+ 1 SYSTEMPATH/BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:05:58 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/BaseModel.php on line 1833.
+ 1 SYSTEMPATH/BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:06:15 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: api/doctors/7]
+in SYSTEMPATH/BaseModel.php on line 1833.
+ 1 SYSTEMPATH/BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH/Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:09:12 --> ErrorException: Undefined array key "doctorschedules.id"
+[Method: GET, Route: api/doctors/7]
+in APPPATH/Controllers/Doctors.php on line 99.
+ 1 APPPATH/Controllers/Doctors.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "doctorschedules.id"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 99)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->show('7')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:12:04 --> ErrorException: Undefined array key "id"
+[Method: PUT, Route: api/doctors/7]
+in APPPATH/Controllers/Doctors.php on line 126.
+ 1 APPPATH/Controllers/Doctors.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 126)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:12:47 --> ErrorException: Undefined variable $7
+[Method: PUT, Route: api/doctors/7]
+in APPPATH/Controllers/Doctors.php on line 125.
+ 1 APPPATH/Controllers/Doctors.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $7', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 125)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:13:13 --> ErrorException: Undefined array key "id"
+[Method: PUT, Route: api/doctors/7]
+in APPPATH/Controllers/Doctors.php on line 126.
+ 1 APPPATH/Controllers/Doctors.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 126)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:14:01 --> ErrorException: Undefined array key "id"
+[Method: PUT, Route: api/doctors/7]
+in APPPATH/Controllers/Doctors.php on line 126.
+ 1 APPPATH/Controllers/Doctors.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 126)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->update('7')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:53:20 --> Error: Class "App\Controllers\InspectionSchedulesModel" not found
+[Method: GET, Route: api/inspection_schedule]
+in APPPATH/Controllers/Inspection_schedule.php on line 26.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+ERROR - 2024-07-16 20:54:15 --> mysqli_sql_exception: Unknown column 'doctors.id_doctor' in 'on clause' in /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/fullstack/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `inspect...', 0)
+#1 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inspect...')
+#2 /Applications/MAMP/htdocs/fullstack/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inspect...')
+#3 /Applications/MAMP/htdocs/fullstack/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `inspect...', Array, false)
+#4 /Applications/MAMP/htdocs/fullstack/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/fullstack/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(10, 0)
+#6 /Applications/MAMP/htdocs/fullstack/app/Controllers/Inspection_schedule.php(48): CodeIgniter\BaseModel->findAll(10, 0)
+#7 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(933): App\Controllers\inspection_schedule->index()
+#8 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+#9 /Applications/MAMP/htdocs/fullstack/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/fullstack/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/fullstack/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/fullstack/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Applications/MAMP/htdocs/fullstack/system/rewrite.php(44): require_once('/Applications/M...')
+#14 {main}
+CRITICAL - 2024-07-16 20:54:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctors.id_doctor' in 'on clause'
+[Method: GET, Route: api/inspection_schedule]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(10, 0)
+ 4 APPPATH/Controllers/Inspection_schedule.php(48): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->index()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:54:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctors.id_doctor' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(10, 0)
+ 6 APPPATH/Controllers/Inspection_schedule.php(48): CodeIgniter\BaseModel->findAll(10, 0)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:54:15 --> [Caused by] mysqli_sql_exception: Unknown column 'doctors.id_doctor' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `inspectionschedules`.*, `doctors`.`name` as `dname`, `patients`.`name` as `pname`
+FROM `inspectionschedules`
+LEFT JOIN `doctors` ON `doctors`.`id` = `doctors`.`id_doctor`
+LEFT JOIN `patients` ON `patients`.`id` = `doctors`.`id_patient`
+ LIMIT 10', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH/Controllers/Inspection_schedule.php(48): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->index()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 20:59:59 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 71.
+ 1 APPPATH/Controllers/Doctors.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 71)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->create()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:01:20 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 21.
+ 1 APPPATH/Controllers/Doctors.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 21)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:01:44 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 21.
+ 1 APPPATH/Controllers/Doctors.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 21)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:03:32 --> ErrorException: Undefined variable $length
+[Method: GET, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 42.
+ 1 APPPATH/Controllers/Doctors.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $length', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 42)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:18:23 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/doctors]
+in APPPATH/Controllers/Doctors.php on line 29.
+ 1 APPPATH/Controllers/Doctors.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 29)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:18:23 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/patients]
+in APPPATH/Controllers/Patients.php on line 20.
+ 1 APPPATH/Controllers/Patients.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Patients.php', 20)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Patients->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Patients))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:36:25 --> ErrorException: Undefined array key "name"
+[Method: PUT, Route: api/inspection_schedule/2]
+in APPPATH/Controllers/Inspection_schedule.php on line 113.
+ 1 APPPATH/Controllers/Inspection_schedule.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Inspection_schedule.php', 113)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->update('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 21:36:39 --> ErrorException: Undefined array key "name"
+[Method: PUT, Route: api/inspection_schedule/2]
+in APPPATH/Controllers/Inspection_schedule.php on line 113.
+ 1 APPPATH/Controllers/Inspection_schedule.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Inspection_schedule.php', 113)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\inspection_schedule->update('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\inspection_schedule))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 22:04:24 --> ErrorException: Undefined array key "id_doctor"
+[Method: GET, Route: api/doctorsall]
+in APPPATH/Controllers/Doctors.php on line 207.
+ 1 APPPATH/Controllers/Doctors.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_doctor"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 207)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->doctorsall()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 22:04:26 --> ErrorException: Undefined array key "id_doctor"
+[Method: GET, Route: api/doctorsall]
+in APPPATH/Controllers/Doctors.php on line 207.
+ 1 APPPATH/Controllers/Doctors.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_doctor"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 207)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->doctorsall()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')
+CRITICAL - 2024-07-16 22:04:32 --> ErrorException: Undefined array key "id_doctor"
+[Method: GET, Route: api/doctorsall]
+in APPPATH/Controllers/Doctors.php on line 207.
+ 1 APPPATH/Controllers/Doctors.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_doctor"', '/Applications/MAMP/htdocs/fullstack/app/Controllers/Doctors.php', 207)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Doctors->doctorsall()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Doctors))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/fullstack/public/index.php')

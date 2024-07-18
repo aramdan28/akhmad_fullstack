@@ -14,13 +14,20 @@ class Patients extends ResourceController
     public function index()
     {
         // Get parameters sent by DataTables
+        $patientModel = new PatientModel();
+
+        if (isset($_GET['all']) && $_GET['all'] == '1') {
+            $patient = $patientModel->findAll();
+
+            return $this->respond(['data' => $patient]);
+        }
+
         $draw = $this->request->getVar('draw');
         $start = $this->request->getVar('start');
         $length = $this->request->getVar('length');
         $searchValue = $this->request->getVar('search')['value'];
 
         // Query the database
-        $patientModel = new PatientModel();
 
         // Count all records
         $totalRecords = $patientModel->countAll();
@@ -59,9 +66,14 @@ class Patients extends ResourceController
 
     public function create()
     {
-        $data = $this->request->getPost();
-        $this->model->save($data);
-        return $this->respondCreated($data);
+        $data = $this->request->getJSON(true);
+
+        if ($this->model->save($data)) {
+            return $this->respond([$data, 'status' => 200, 'sts' => 'ok', 'message' => 'Data pasien telah ditambahkan']);
+        } else {
+
+            return $this->respond([$data, 'status' => 200, 'sts' => 'error', 'message' => 'error']);
+        }
     }
 
     public function show($id = null)
@@ -74,8 +86,12 @@ class Patients extends ResourceController
     {
         $data = $this->request->getJSON(true);
 
-        $this->model->update($id, $data);
-        return $this->respond($data);
+        if ($this->model->update($id, $data)) {
+            return $this->respond([$data, 'status' => 200, 'sts' => 'ok', 'message' => 'Data telah diperbaharui']);
+        } else {
+
+            return $this->respond([$data, 'status' => 200, 'sts' => 'error', 'message' => 'error']);
+        }
     }
 
     public function delete($id = null)
@@ -83,11 +99,20 @@ class Patients extends ResourceController
         $userModel = new UserModel();
 
         $patient =  $this->model->find($id);
+
         $iduser =  $patient['id_user'];
 
-        $this->model->delete($id);
-        $userModel->where('id', $iduser)->delete();
+        $deleted = $this->model->delete($id);
 
-        return $this->respondDeleted(['id' => $id]);
+        if ($patient) {
+            $userModel->where('id', $iduser)->delete();
+        }
+
+        if ($deleted) {
+            return $this->respond(['status' => 200, 'sts' => 'ok', 'message' => 'Data telah dihapus']);
+        } else {
+
+            return $this->respond(['status' => 200, 'sts' => 'error', 'message' => 'error']);
+        }
     }
 }

@@ -12,6 +12,7 @@ $routes->get('sign-up', 'Home::sign_up');
 $routes->post('register', 'AuthController::register');
 $routes->post('login', 'AuthController::login');
 
+$routes->get('doctorsall', 'Home::doctorsall');
 
 $routes->group('administrator',   function ($routes) {
     $routes->get('', 'AdminController::index');
@@ -22,9 +23,10 @@ $routes->group('administrator',   function ($routes) {
     $routes->get('inspection-schedule', 'AdminController::manageInspectionSchedules');
 });
 
-$routes->group('api', ['filter' => 'jwt'], function ($routes) {
-    $routes->resource('patients');
-    $routes->resource('doctors');
-    $routes->resource('doctor_schedule');
-    $routes->resource('inspection_schedule');
+$routes->group('api',  function ($routes) {
+    $routes->resource('patients', ['filter' => 'jwt']);
+    $routes->resource('doctors', ['filter' => 'jwt']);
+    $routes->resource('doctor_schedule', ['filter' => 'jwt']);
+    $routes->resource('inspection_schedule', ['filter' => 'jwt']);
+    $routes->get('doctorsall', 'Doctors::doctorsall');
 });

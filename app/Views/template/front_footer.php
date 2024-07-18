@@ -36,8 +36,6 @@
                     <ul class="list-unstyled mb-0">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Pricing</a></li>
                         <li><a href="#">Features</a></li>
                     </ul>
                 </div>

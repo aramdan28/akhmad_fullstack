@@ -12,7 +12,7 @@ class DoctorScheduleModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_doctor', 'date_work', 'time_start', 'end_time', 'created_at', 'created_by', 'updated_at', 'updated_by'];
+    protected $allowedFields    = ['id_doctor', 'day', 'time_start', 'end_time', 'created_at', 'created_by', 'updated_at', 'updated_by'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

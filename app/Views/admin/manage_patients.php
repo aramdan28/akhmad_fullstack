@@ -191,16 +191,37 @@
         // Add Patient
         $('#addPatientForm').submit(function(e) {
             e.preventDefault();
+
+            var name = document.getElementById('addName').value;
+            var age = document.getElementById('addAge').value;
+            var address = document.getElementById('addAddress').value;
+            var medical_record = document.getElementById('addMedicalRecord').value;
+
+            let data = {
+                'name': name,
+                'age': age,
+                'address': address,
+                'medical_record': medical_record
+            }
+
+
             $.ajax({
                 url: 'http://localhost:8080/api/patients',
                 type: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 },
-                data: $(this).serialize(),
+                data: JSON.stringify(data),
                 success: function(response) {
-                    $('#addPatientModal').modal('hide');
-                    table.ajax.reload();
+
+                    if (response.sts == 'ok') {
+                        toastr.success(response.message);
+                        $('#addPatientModal').modal('hide');
+                        table.ajax.reload();
+                    } else {
+                        toastr.error(response.message);
+
+                    }
                 },
                 error: function(xhr) {
                     alert('Error saving patient');
@@ -279,8 +300,14 @@
                 },
                 data: JSON.stringify(data),
                 success: function(response) {
-                    $('#editPatientModal').modal('hide');
-                    table.ajax.reload();
+                    if (response.sts == 'ok') {
+                        toastr.success(response.message);
+                        $('#editPatientModal').modal('hide');
+                        table.ajax.reload();
+                    } else {
+                        toastr.error(response.message);
+
+                    }
                 },
                 error: function(xhr) {
                     alert('Error updating patient');
@@ -299,7 +326,15 @@
                         'Authorization': 'Bearer ' + localStorage.getItem('token')
                     },
                     success: function(response) {
-                        table.ajax.reload();
+                        if (response.sts == 'ok') {
+                            toastr.success(response.message);
+                            table.ajax.reload();
+
+                        } else {
+                            toastr.error(response.message);
+
+                        }
+
                     },
                     error: function(xhr) {
                         alert('Error deleting patient');

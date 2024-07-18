@@ -4,7 +4,7 @@
             <div class="navbar-brand w-100">
                 <a href="<?= base_url() ?>index.html">
                     <img class="logo-dark" src="<?= base_url() ?>assets/img/logo.svg" srcset="<?= base_url() ?>assets/img/logo.svg 2x" width="100" alt="" />
-                    <img class="logo-light rounded p-1" src="<?= base_url() ?>assets/img/logo.svg" srcset="<?= base_url() ?>assets/img/logo.svg 2x" alt="" style="background: #fff8;" />
+                    <img class="logo-light rounded p-1" src="<?= base_url() ?>assets/img/logo.svg" srcset="<?= base_url() ?>assets/img/logo.svg 2x" alt="" width="100" style="background: #fff8;" />
                 </a>
             </div>
             <div class="navbar-collapse offcanvas-nav">
